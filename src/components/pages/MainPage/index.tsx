@@ -57,7 +57,7 @@ export const MainPage: React.FC = () => {
         onDelete={onDelete}
       />
 
-      <EditUser isActive={isEditModal} user={selectedUser} />
+      <EditUser organisations={organisations} isActive={isEditModal} user={selectedUser} />
     </>
   )
 }
