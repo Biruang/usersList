@@ -1,14 +1,13 @@
 import React from "react";
+import "./styled.css"
 
 interface IInput {
   value?: string;
-  label?: string;
   onChange?: (value: string) => void
 }
 
 export const Input: React.FC<IInput> = (
 {
-  label,
   value = "",
   onChange = () => {}
 }) => {
@@ -16,13 +15,5 @@ export const Input: React.FC<IInput> = (
     onChange(ev.target.value);
   }
 
-  return(
-    <label>
-      <div>
-        {label}
-      </div>
-
-      <input value={value} onChange={onChangeClick} />
-    </label>
-  )
+  return <input className="input" value={value} onChange={onChangeClick} />
 }

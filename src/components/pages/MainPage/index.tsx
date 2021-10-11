@@ -3,14 +3,14 @@ import './styled.css';
 import {Table} from "../../organisms/Table";
 import orgData from '../../../assets/organisations.json';
 import usersData from '../../../assets/users.json';
-import {EditUser} from "../../modals/EditUser";
+import {UserModal} from "../../modals/UserModal";
 
 export type TUser = {
   id: number,
   firstName: string,
   lastName: string,
   middleName: string,
-  organisationId: number,
+  organisationId?: number,
   email: string
 }
 
@@ -46,9 +46,36 @@ export const MainPage: React.FC = () => {
     }
   }
 
+  const onSave = (user: TUser) => {
+    let newUsers = users.map(item => {
+      if(item.id === user.id) return user;
+      return item;
+    });
+
+    setUsers(newUsers);
+    setIsEditModal(false);
+  }
+
+  const onCreate = (user: TUser) => {
+    let newUsers = [...users];
+    newUsers.push(user);
+
+    setUsers(newUsers);
+    setIsEditModal(false);
+  }
+
+  const onModalClose = () => {
+    setIsEditModal(false);
+  }
+
+  const onCreateOpen = () => {
+    setSelectedUser(undefined);
+    setIsEditModal(true);
+  }
+
   return(
     <>
-      <button>Добавить пользователя</button>
+      <button onClick={onCreateOpen}>Добавить пользователя</button>
 
       <Table
         organisations={organisations}
@@ -57,7 +84,14 @@ export const MainPage: React.FC = () => {
         onDelete={onDelete}
       />
 
-      <EditUser organisations={organisations} isActive={isEditModal} user={selectedUser} />
+      <UserModal
+        organisations={organisations}
+        isActive={isEditModal}
+        user={selectedUser}
+        onClose={onModalClose}
+        onCreate={onCreate}
+        onEdit={onSave}
+      />
     </>
   )
 }

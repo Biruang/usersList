@@ -1,0 +1,27 @@
+.select-container{
+    position: relative;
+}
+
+.select{
+    height: 40px;
+    cursor: pointer;
+}
+
+.select-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    margin: 2px 0 0;
+    padding: 0;
+    background: #fff;
+}
+
+.select-menu-item{
+    cursor: pointer;
+}
+
+.select-menu-item:hover{
+    background: #bbb8b8;
+}
