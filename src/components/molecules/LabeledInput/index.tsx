@@ -14,8 +14,8 @@ export const LabeledInput: React.FC<ILabeledInput> = ({
   onChange
 }) => {
   return(
-    <label className="labeled-input">
-      <span>{label}</span>
+    <label className="labeledInput">
+      <span className="labeledInput-label">{label}</span>
       <Input value={value} onChange={onChange} />
     </label>
   )

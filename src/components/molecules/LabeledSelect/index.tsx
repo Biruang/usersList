@@ -17,8 +17,8 @@ export const LabeledSelect: React.FC<ILabeledSelect> = ({
   onSelect
 }) => {
   return(
-    <label className="labeled-select">
-      <span>{label}</span>
+    <label className="labeledSelect">
+      <span className="labeledSelect-label">{label}</span>
 
       <Select
         organisations={organisations}

@@ -1,6 +1,13 @@
-.labeled-input{
+.labeledInput{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px
+}
+
+.labeledInput-label {
+    min-width: 100px;
+    text-align: right;
+    cursor: pointer;
+    user-select: none;
 }

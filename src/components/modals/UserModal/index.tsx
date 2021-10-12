@@ -65,18 +65,56 @@ export const UserModal: React.FC<IEditUser> = ({
       onClick={onCloseClick}
     >
       <div className="editUser">
-        <LabeledInput label="Фамилия" value={lastName}/>
-        <LabeledInput label="Имя" value={firstName}/>
-        <LabeledInput label="Отчество" value={middleName}/>
-        <LabeledSelect
-          label="Организация"
-          organisations={organisations}
-          selectedId={organisationId}
-          onSelect={onOrgSelect}
-        />
-        <LabeledInput label="E-Mail" value={email}/>
-        <button onClick={onSave}>Ок</button>
-        <button onClick={onCloseClick}>Отмена</button>
+        <div className="editUser-title">Создать пользователя</div>
+
+        <div className="editUser-body">
+          <div className="editUser-input">
+            <LabeledInput
+              label="Фамилия"
+              value={lastName}
+              onChange={(value) => setLastName(value)}
+            />
+          </div>
+
+          <div className="editUser-input">
+            <LabeledInput
+              label="Имя"
+              value={firstName}
+              onChange={(value => setFirstName(value))}
+            />
+          </div>
+
+          <div className="editUser-input">
+            <LabeledInput
+              label="Отчество"
+              value={middleName}
+              onChange={(value) => setMiddleName(value)}
+            />
+          </div>
+
+          <div className="editUser-input">
+            <LabeledSelect
+              label="Организация"
+              organisations={organisations}
+              selectedId={organisationId}
+              onSelect={onOrgSelect}
+            />
+          </div>
+
+          <div className="editUser-input">
+            <LabeledInput
+              label="E-Mail"
+              value={email}
+              onChange={(value) => setEmail(value)}
+            />
+          </div>
+
+          <div className="editUser-buttons">
+            <button className="editUser-button" onClick={onSave}>Ок</button>
+
+            <button className="editUser-button" onClick={onCloseClick}>Отмена</button>
+          </div>
+        </div>
       </div>
     </ModalContainer>
   )

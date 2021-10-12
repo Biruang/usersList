@@ -25,30 +25,29 @@ export const Table: React.FC<ITable> = (
   }
 
   return(
-    <>
-      <table>
-        <thead>
-          <tr>
-            <th>Пользователь</th>
-            <th>Организация</th>
-            <th>Email</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
+    <table>
+      <thead>
+        <tr>
+          <td>Пользователь</td>
+          <td>Организация</td>
+          <td>Email</td>
+          <td />
+        </tr>
+      </thead>
 
-        {
-          users.map(user => (
-            <TableRow
-              user={user}
-              organisation={organisations.find(org => org.id === user.organisationId)} key={user.id}
-              onEdit={onEditClick(user)}
-              onDelete={onDeleteClick(user)}
-            />
-          ))
-        }
-        </tbody>
-      </table>
-    </>
+      <tbody>
+
+      {
+        users.map(user => (
+          <TableRow
+            user={user}
+            organisation={organisations.find(org => org.id === user.organisationId)} key={user.id}
+            onEdit={onEditClick(user)}
+            onDelete={onDeleteClick(user)}
+          />
+        ))
+      }
+      </tbody>
+    </table>
   )
 }

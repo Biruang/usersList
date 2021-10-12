@@ -22,9 +22,7 @@ export const ModalContainer: React.FC<IModalContainer> = ({
       className={`modal-background${!isActive ? " disabled" : ""}`}
       onClick={click}
     >
-      <div>
         {children}
-      </div>
     </div>
   )
 }

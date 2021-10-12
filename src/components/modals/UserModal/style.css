@@ -1,5 +1,44 @@
 .editUser {
     background: #fff;
     border-radius: 4px;
+    border: 2px solid #000000;
+    max-width: 500px;
+    width: 100%;
+}
+
+.editUser-title{
+    font-size: 24px;
+    font-weight: 600;
     padding: 20px;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+    user-select: none;
+}
+
+.editUser-body{
+    padding: 30px 30px 20px;
+}
+
+.editUser-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editUser-input{
+    margin-bottom: 20px;
+}
+
+.editUser-button{
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    user-select: none;
+    min-width: 100px;
+}
+
+.editUser-button:first-child{
+    margin-right: 10px;
 }
